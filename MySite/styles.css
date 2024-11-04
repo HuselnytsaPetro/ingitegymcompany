@@ -1,0 +1,135 @@
+* {
+    height: 100%;
+    margin: 0;
+}
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    background-image: url(/images/main_back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 2.5px dashed wheat;
+}
+.animate-on-load {
+    transform: translateY(0);
+    opacity: 1;
+    transition: opacity 1.2s ease, transform 1.2s ease;
+}
+.parent::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/lines.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 0;
+    filter: brightness(0.8) contrast(1.2) saturate(1.5) grayscale(50%) hue-rotate(90deg) sepia(20%) blur(2px);
+}
+.sportman {
+    opacity: 0;
+    transform: translateY(100%);
+}
+.animate-on-load img {
+    filter: drop-shadow(8px 8px 8px wheat);
+
+}
+.animate-on-load img:hover {
+    filter: drop-shadow(10px 10px 10px white);
+}
+.text_wrapper {
+    display: inline;
+    font-size: 64px;
+    color: wheat;
+    height: auto;
+    text-shadow: 2px 2px 14px wheat;
+    -webkit-text-stroke: 1.5px black;
+    font-family: "Spicy Rice", serif;
+    font-weight: 400;
+    font-style: normal;
+    transition: text-shadow 0.4s ease, -webkit-text-stroke 0.4s ease;
+    transition: opacity 1.5s ease;
+    z-index: 2;
+    opacity: 85%;
+
+}
+.text_wrapper:hover {
+    color: wheat;
+    height: auto;
+    text-shadow: 5px 5px 14px white;
+    -webkit-text-stroke: 1.2px black;
+    cursor: pointer;
+}
+.navigation {
+    transform: translateY(0);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    background-color: rgb(45, 40, 40);
+    height: 12%;
+    width: 100%;
+    z-index: 1;
+    opacity: 65%;
+    backdrop-filter: blur(100px);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+    border-bottom: 2.5px dashed wheat;
+}
+.nav-start {
+    opacity: 0;
+    transform: translateY(-100%);
+    position: relative;
+}
+.navigation ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    width: 100%;
+    padding: 0;
+
+}
+.navigation ul li {
+    width: 85px;
+    display: inline;
+    margin-top: 30px;
+    border: 2px solid wheat;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    margin: auto;
+    height: 23px;
+    padding: 10px;
+    color: wheat;
+    box-shadow: 4px 8px 25px;
+    transition: background-color 0.4s ease,
+        border-color 0.4s ease,
+        transform 0.4s ease;
+    font-family: "Teko", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-size: 19px;
+    transform: scale(1.3);
+    padding-left: 55px;
+
+}
+.navigation ul li:hover {
+    border: 2px solid white;
+    box-shadow: 2px 4px 13px;
+    color: white;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+.text_start {
+    opacity: 0;
+    transform: translateY(20px);
+}

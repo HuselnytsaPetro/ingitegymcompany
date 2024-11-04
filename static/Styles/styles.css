@@ -1,5 +1,6 @@
 * {
     margin: 0;
+    box-sizing: border-box;
 }
 
 .slogans-parrent {
@@ -12,9 +13,10 @@
     flex-direction: column;
     gap: 10px;
     border-bottom: 2.5mm ridge rgba(34, 36, 37, 0.6);
+    position: relative;
 }
 
-.slogans-parrent::before { 
+.slogans-parrent::before {
     content: "";
     position: absolute;
     top: 0;
@@ -37,7 +39,8 @@
     padding: 10px;
     width: 100%;
     text-shadow: 1px 1px 10px #d9ddda;
-    -webkit-text-stroke: 1.5px black
+    -webkit-text-stroke: 1.5px black;
+    text-align: center;
 }
 
 .header {
@@ -58,7 +61,7 @@
 
 .header-section {
     border-radius: 1;
-    transition: transform 0.9s ease, color 0.5s ease, webkit-text-stroke 0.5s ease, border-radius 0.6s ease;
+    transition: transform 0.4s ease, color 0.5s ease, webkit-text-stroke 0.5s ease, border-radius 0.4s ease;
     border: 2px solid white;
     padding: 3px;
 }
@@ -89,6 +92,48 @@
     border-radius: 12px;
     transform: scale(1.2);
 }
+
 .img-gantel {
     width: 100%;
+}
+
+/* Медіа-запити для адаптації на мобільних пристроях */
+@media (max-width: 768px) {
+    .slogan_wrapper {
+        font-size: 35px;
+        /* Зменшуємо розмір шрифту для меншого екрана */
+        -webkit-text-stroke: 1px black;
+        /* Тонший обвід тексту */
+    }
+
+    .header {
+        flex-direction: column;
+        /* Переміщення елементів заголовка у колонку */
+        height: auto;
+        padding: 8px;
+    }
+
+    .header-section {
+        padding: 5px;
+        font-size: 14px;
+        /* Зменшуємо шрифт для заголовка */
+        margin: 5px 0;
+    }
+
+    .gantel-image {
+        width: 30px;
+        /* Зменшуємо розмір іконки */
+        height: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slogan_wrapper {
+        font-size: 25px;
+        /* Ще менший розмір шрифту для зовсім малих екранів */
+    }
+
+    .header-section {
+        font-size: 12px;
+    }
 }
